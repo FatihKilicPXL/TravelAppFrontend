@@ -4,7 +4,7 @@
 This is the **frontend** of a Travel & Expense Reimbursement App.  
 Employees can register business trips and home–work bike commutes, view their submitted trips, and see reimbursement statuses. Managers can review, approve, or reject reimbursements.  
 
-This frontend is built using **Vue 3** with a mobile-first, Material 3–inspired design.  
+This frontend is built using **Vue 3** with a mobile-first design.  
 
 ## Features (User Stories)
 - **US-01:** Login with company account or unique nickname.  
