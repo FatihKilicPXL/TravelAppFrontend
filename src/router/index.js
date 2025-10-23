@@ -4,7 +4,7 @@ import MyExpenses from '@/views/MyExpenses.vue'
 import About from '@/views/About.vue'
 
 const routes = [
-  { path: '/', component: Home },
+  { path: '/', component: MyExpenses },
   { path: '/about', component: About },
 ]
 
