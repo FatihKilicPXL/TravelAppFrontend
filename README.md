@@ -18,8 +18,8 @@ This frontend is built using **Vue 3** with a mobile-first design.
 ## Development & DevOps Practices
 - always make a new branch when working a single feature
 - make pull requests
-- branch name template: feature/us-02-add-trip-mock
-   the 'mock' explains its using mock data, no API integration
+- branch name template: `feature/us-02-add-trip-mock`
+the 'mock' explains its using mock data, no API integration
 
 ## Folder & Component Structure (Frontend)
 - `src/views/`: Page-level components
