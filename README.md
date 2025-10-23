@@ -1,38 +1,39 @@
-# TravelAppFrontend
+# Travel & Expense Reimbursement App - Frontend
 
-This template should help get you started developing with Vue 3 in Vite.
+## Overview
+This is the **frontend** of a Travel & Expense Reimbursement App.  
+Employees can register business trips and home–work bike commutes, view their submitted trips, and see reimbursement statuses. Managers can review, approve, or reject reimbursements.  
 
-## Recommended IDE Setup
+This frontend is built using **Vue 3** with a mobile-first, Material 3–inspired design.  
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Features (User Stories)
+- **US-01:** Login with company account or unique nickname.  
+- **US-02:** Register a new trip/commute : MOCK ☑️
+- **US-03:** View all submitted trips with reimbursement status. : MOCK ☑️ 
+- **US-04:** (Manager) View all trips, filter by employee, transport, or month.  
+- **US-05:** (Manager) Approve or reject reimbursement requests.  
+- **US-06:** View a summary of reimbursements (total per month or transport type).  
+- **US-99:** Export monthly overview as PDF or CSV (extra feature).  
 
-## Recommended Browser Setup
+## Development & DevOps Practices
+- always make a new branch when working a single feature
+- make pull requests
+- branch name template: feature/us-02-add-trip-mock
+   the 'mock' explains its using mock data, no API integration
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+## Folder & Component Structure (Frontend)
+- `src/views/`: Page-level components
+- `src/components/`: Reusable components
+- `src/assets/`: Global CSS, fonts, and images  
+- `src/router/index.js`: Route definitions for SPA navigation  
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
+## Getting Started
+```bash
+# Install dependencies
 npm install
-```
 
-### Compile and Hot-Reload for Development
-
-```sh
+# Start development server
 npm run dev
-```
 
-### Compile and Minify for Production
-
-```sh
+# Build for production
 npm run build
-```
