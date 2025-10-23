@@ -10,12 +10,12 @@ html, body {
   font-family: var(--font-main);
   margin: 0;
   padding: 0;
-  background-color: #fffbf9;
+  background-color: #fcf9f6;  
   color: #1b1b1b;
   line-height: 1.5;
 }
 
-/* Optional: smoother text */
+/* Optional: smoother text*/
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

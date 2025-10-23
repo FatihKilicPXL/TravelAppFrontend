@@ -63,7 +63,7 @@ h1 {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background-color: var(--md-sys-color-primary, #b086ff);
+  background-color: var(--md-sys-color-primary, #ae74ff);
   color: white;
   font-size: 2rem;
   border: none;
