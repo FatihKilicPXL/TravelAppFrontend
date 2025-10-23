@@ -14,9 +14,10 @@
   justify-content: center;
   padding: 0.75rem 1.25rem;
   background-color: var(--md-sys-color-surface, #fdfcfb);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   border-radius: 1rem;
   margin: 1rem auto;
+  margin-top: 22px;
   width: fit-content;
 }
 
