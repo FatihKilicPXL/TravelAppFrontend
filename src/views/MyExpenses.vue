@@ -26,7 +26,7 @@ const expenses = [
 const router = useRouter()
 
 function goToAddExpense() {
-  router.push('/add-expense') // Replace with your actual Add Expense route path
+    router.push({ name: 'AddExpense' })
 }
 </script>
 
