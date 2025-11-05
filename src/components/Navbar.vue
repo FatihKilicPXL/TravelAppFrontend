@@ -1,7 +1,7 @@
 <template>
   <header class="navbar">
     <nav>
-      <RouterLink to="/" class="link" exact>My Expenses</RouterLink>
+      <RouterLink to="/my-expenses" class="link" exact>My Expenses</RouterLink>
       <RouterLink to="/about" class="link">About</RouterLink>
     </nav>
   </header>
