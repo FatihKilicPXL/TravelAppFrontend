@@ -1,0 +1,39 @@
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  buildConfiguration: 'Release'
+  distFolder: 'dist'
+  zipFile: '$(Build.ArtifactStagingDirectory)/travelapp-frontend.zip'
+
+steps:
+# Install Node.js
+- task: NodeTool@0
+  inputs:
+    versionSpec: '20.x'
+  displayName: 'Install Node.js 20'
+
+# Install dependencies
+- script: npm install
+  displayName: 'npm install'
+
+# Build Vue app
+- script: npm run build
+  displayName: 'Build Vue app'
+
+# Zip the dist folder
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(distFolder)'
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: '$(zipFile)'
+    replaceExistingArchive: true
+
+# Deploy to Azure Web App
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'azure-rg-softengPE-frontend'
+    appName: 'travelapp-frontend'
+    package: '$(zipFile)'
+    appType: 'webApp'
