@@ -1,3 +1,6 @@
+trigger:  # Add this—mirrors backend
+- main
+
 pool:
   vmImage: 'windows-latest'
 
