@@ -4,6 +4,8 @@ import MyExpenses from '@/views/MyExpenses.vue'
 import About from '@/views/About.vue'
 import Login from '@/views/Login.vue'
 import AddExpense from '@/views/AddExpense.vue'
+import Manager from '@/views/Manager.vue'
+
 
 const routes = [
   { path: '/',            name: 'Login', component: Login },
@@ -11,6 +13,8 @@ const routes = [
   { path: '/my-expenses', name: 'MyExpenses', component: MyExpenses },
   { path: '/add-expense', name: 'AddExpense', component: AddExpense },
   { path: '/about',       name: 'About', component: About },
+    { path: '/manager',   name: 'Manager', component: Manager },
+
 ]
 
 const router = createRouter({
