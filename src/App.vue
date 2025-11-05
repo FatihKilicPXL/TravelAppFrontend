@@ -1,9 +1,12 @@
 <script setup>
-import Navbar from './components/Navbar.vue';
+import { useRoute } from 'vue-router'
+import Navbar from './components/Navbar.vue'
+
+const route = useRoute()
 </script>
 
 <template>
-  <Navbar />
+  <Navbar v-if="route.name !== 'Login'" />
   <router-view />
 </template>
 
