@@ -4,15 +4,23 @@
       <h1>My Expenses</h1>
     </header>
 
+    <!-- Quick Totals Summary -->
+    <section class="summary">
+      <p><strong>Total Expenses:</strong> €{{ totalCost.toFixed(2) }}</p>
+      <p><strong>Total Distance:</strong> {{ totalDistance.toFixed(1) }} km</p>
+      <p><strong>Number of Expenses:</strong> {{ expenses.length }}</p>
+    </section>
+
     <section class="list">
       <Expense v-for="expense in expenses" :key="expense.id" :expense="expense"/>
     </section>
-
   </main>
+
   <button class="fab" @click="goToAddExpense">+</button>
 </template>
 
 <script setup>
+import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 import Expense from '@/components/Expense.vue'
 
@@ -26,8 +34,12 @@ const expenses = [
 const router = useRouter()
 
 function goToAddExpense() {
-    router.push({ name: 'AddExpense' })
+  router.push({ name: 'AddExpense' })
 }
+
+// Computed totals for user story 6
+const totalCost = computed(() => expenses.reduce((sum, e) => sum + e.cost, 0))
+const totalDistance = computed(() => expenses.reduce((sum, e) => sum + e.distance, 0))
 </script>
 
 <style scoped>
@@ -47,6 +59,15 @@ h1 {
   font-size: 1.75rem;
   font-weight: 600;
   margin: 0;
+}
+
+.summary {
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  line-height: 1.4;
 }
 
 .list {
