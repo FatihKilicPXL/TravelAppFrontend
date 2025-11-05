@@ -36,7 +36,7 @@ steps:
 # Deploy to Azure Web App
 - task: AzureWebApp@1
   inputs:
-    azureSubscription: 'azure-rg-softengPE'
+    azureSubscription: 'azure-rg-softengPE-frontend'
     appName: 'travelapp-frontend'
     package: '$(zipFile)'
     appType: 'webApp'
