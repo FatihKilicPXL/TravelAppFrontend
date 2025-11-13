@@ -1,11 +1,28 @@
 <template>
   <header class="navbar">
     <nav>
-      <RouterLink to="/my-expenses" class="link" exact>My Expenses</RouterLink>
+      <RouterLink to="/my-expenses" :class="expensesLink" exact>My Expenses</RouterLink>
+      <RouterLink to="/manager" :class="managerLink" exact>Manage</RouterLink>
       <RouterLink to="/about" class="link">About</RouterLink>
     </nav>
   </header>
 </template>
+
+<script setup>
+import { ref } from 'vue'
+
+const expensesLink = ref('link')
+const managerLink = ref('link')
+
+const user = JSON.parse(localStorage.getItem('user') || '{}')
+
+if(user.role == 1) expensesLink.value = 'hidden'
+if(user.role == 2) managerLink.value = 'hidden'
+
+
+
+
+</script>
 
 <style scoped>
 .navbar {
@@ -43,5 +60,9 @@ nav {
 .router-link-active {
   color: var(--md-sys-color-on-primary-container, #111111);
   font-weight: 600;
+}
+
+.hidden{
+  display: none;
 }
 </style>

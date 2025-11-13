@@ -7,8 +7,8 @@
     <section class="form-section">
       <form @submit.prevent="login">
         <div class="input-group">
-          <label for="email">Email</label>
-          <input id="email" type="email" v-model="email" required />
+          <label for="Username">Username</label>
+          <input id="Username" type="text" v-model="Username" required />
         </div>
 
         <div class="input-group">
@@ -18,27 +18,42 @@
 
         <button class="login-btn" type="submit">Sign In</button>
       </form>
+      <div>{{ errorMessage }}</div>
     </section>
   </main>
 </template>
 
 <script setup>
+import axios from 'axios'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import MyExpenses from './MyExpenses.vue'
 
 const router = useRouter()
-const email = ref('')
+const Username = ref('')
 const password = ref('')
+const errorMessage = ref('')
 
-function login() {
-  if (email.value && password.value) {
-    // mock auth logic
-    router.push({ name: 'MyExpenses' })
-  } else {
-    alert('Please enter your credentials')
+async function login() {
+  try {
+    const res = await axios.post('https://localhost:7209/api/Auth/login', {
+      username: Username.value,
+      password: password.value
+    })
+
+    localStorage.setItem('token', res.data.token)
+    localStorage.setItem('user', JSON.stringify(res.data.user))
+
+    if(res.data.user.role === 1) router.push({name: 'Manager' })   
+    else                         router.push({name: 'MyExpenses' })
+
+  } catch (err) {
+    errorMessage.value = err.response?.data
   }
 }
+
 </script>
+
 
 <style scoped>
 .container {
